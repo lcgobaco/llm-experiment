@@ -7,7 +7,7 @@ import time
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "qwen3:1.7b"
 # change to actual data path
-DATA_PATH = "~/RSE_2026/data/240103.ga_all_variants-with_comments.tsv.toKB.xlsx - 240103.ga_all_variants-with_com.csv"
+DATA_PATH = "/home/dustinmathia/UCD_RSE_stuff/llm-experiment/tests/ollama_llm_output_test_1.csv"
 
 
 
