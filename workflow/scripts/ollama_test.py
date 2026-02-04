@@ -5,9 +5,9 @@ import time
 
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "qwen3:1.7b"
+MODEL = "tinyllama"
 # change to actual data path
-DATA_PATH = "/home/dustinmathia/UCD_RSE_stuff/llm-experiment/tests/ollama_llm_output_test_1.csv"
+DATA_PATH = "../data/raw/example_variant_data.csv"
 
 
 
@@ -23,7 +23,8 @@ columns_to_use = [
 
 # load only the specified columns
 df = pd.read_csv(DATA_PATH, usecols=columns_to_use)
-df = df.iloc[[0]]
+#df = df.iloc[[0]]
+print(df)
 
 outputs = []
 
@@ -35,6 +36,7 @@ def build_prompt(row_dict):
     lines = [f"* {col}: {row_dict.get(col, '')}" for col in columns_to_use] # format each column as "* ColumnName: Value"
     input_data = "\n".join(lines)
     
+    
     return f"""You are an expert system.
     Analyze the following somatic variant data and predict its pathogenicity
     (do not rely on any previous examples or context):
@@ -44,12 +46,16 @@ def build_prompt(row_dict):
     ### TASK
     Based on this information, please classify the variant as 'Benign', 'Likely Benign', 'Likely Pathogenic',
     'Pathogenic', or 'Unknown Significance'. Answer with only one type."""
+    
+
+    #return "pick a random number between 1-5."
 
 
 
 for batch in batch_iteration(df, batch_size=5): # loop through DataFrame in batches
     for idx, row in batch.iterrows(): # loop through rows in the batch
         prompt = build_prompt(row.to_dict()) # turn row into dict to build prompt
+        print(prompt)
 
         response = requests.post(
             OLLAMA_URL,
@@ -64,11 +70,12 @@ for batch in batch_iteration(df, batch_size=5): # loop through DataFrame in batc
             timeout=60
         )
 
-        result = response.json()["response"] # extract LLM response from JSON object
+        result = response.json()#["response"] # extract LLM response from JSON object
+        print(result)
 
         outputs.append({ # store row index and LLM output
             "row_id": idx,
-            "llm_output": result.strip()
+            "llm_output": result["response"].strip()
         })
 
     time.sleep(0.1)  # polite pacing
