@@ -1,0 +1,46 @@
+name: experiment name
+    data: []
+    models: []
+    temp: []
+    columns: [dlkfj. lksjdfs. kldfs,]
+
+dataset:
+  path: data/raw/example_variant_data.csv
+  delimiter: ","
+  has_header: true
+  encoding: utf-8
+
+prompts: []
+
+columns:
+  id: "#ID"
+  chromosome: "Chromosome"
+  chromosome_position: "ChromosomePosition"
+  chr_col: "Chr:ChrPos"
+  ref: "Ref"
+  ref_aa: "RefAA"
+  alt: "Alt"
+  alt_aa: "AltAA"
+  type: "Type"
+  coverage: "Coverage"
+  pathogenicity: "Pathogenicity"
+  pathogenicity_status: "PathogenicityStatus"
+  gene: "Gene"
+  gene_strand: "GeneStrand"
+  exon_number: "ExonNumber"
+  transcript: "Transcript"
+  protein: "Protein"
+  coding_base: "CodingBase"
+  codon_position: "CodonPosition"
+  aa_position: "AAPosition"
+  hgvs_genomic: "HGVSGenomic"
+  hgvsc: "HGVSCoding"
+  hgvsp: "HGVSProtein"
+  panel_group: "PanelGroup"
+  comment_date: "comment_date"
+  comment: "comment"
+  variant_id: "variant_id"
+
+output:
+  save_parsed: results/parsed_variants.csv
+  normalized_columns: true
