@@ -1,10 +1,10 @@
-name: 'test'
-variant_folder: 'data/raw'
-prompts_folder: 'data/prompts'
+name: test
+variant_folder: data/raw
+prompts_folder: data/prompts
 env_file: '../.env'
-variant_file: 'example_variant_data'
-models: ['tinyllama']
-prompts: [prompt_1, prompt_2, prompt_3, prompt_4, prompt_5]
-temps: [0, 0.7]
-cols: ['Type', 'Gene', 'ExonNumber', 'HGVSGenomic', 'HGVSCodingTranscript', 'HGVSCoding', 'HGVSTranslationProtein', 'HGVSProtein']
-repeats: 100
+variant_file: example_variant_data
+models: [tinyllama]
+prompts: [prompt_1.txt, prompt_2.txt, prompt_3.txt, prompt_4.txt, prompt_5.txt]
+temps: [0.0, 0.7]
+cols: [Type, Gene, ExonNumber, HGVSGenomic, HGVSCodingTranscript, HGVSCoding, HGVSTranslationProtein, HGVSProtein]
+repeats: 30
