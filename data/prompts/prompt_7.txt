@@ -1,0 +1,5 @@
+Determine the pathogenicity of the following variant, focusing on its potential functional impact. Classify it as 'Benign', 'Likely Benign', 'Likely Pathogenic', 'Pathogenic', or 'Unknown Significance' and consider any implications for protein function or gene expression.
+
+{row_data}
+
+Consider any experimental data or computational predictions regarding functional impact. Answer with only one type. Do not include your reasong in the response, the response must only be the classifcation.

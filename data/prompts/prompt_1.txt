@@ -1,0 +1,6 @@
+I need an assessment of the pathogenicity of a gene variant based on the following information:
+
+{row_data}
+
+Based on this information, please classify the variant as 'Benign', 'Likely Benign', 'Likely Pathogenic', 'Pathogenic', or 'Unknown Significance'. Answer with only one type.
+	

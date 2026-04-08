@@ -1,0 +1,5 @@
+Please assess the pathogenicity of the following gene variant using the provided genetic information. The assessment should classify the variant as 'Benign', 'Likely Benign', 'Likely Pathogenic', 'Pathogenic', or 'Unknown Significance'. Consider the clinical relevance and any known associations with diseases.
+
+{row_data}
+
+Consider any known databases or literature that might provide insights into the variant's significance. Answer with only one type. Do not include your reasong in the response, the response must only be the classifcation.
